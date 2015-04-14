@@ -54,7 +54,7 @@ public class EarModuleClasspathTest {
         when(project.getArtifact()).thenReturn(artifact);
         when(artifact.getType()).thenReturn("ear");
         when(project.getBuild()).thenReturn(build);
-        when(build.getOutputDirectory()).thenReturn("target/test-classes");
+        when(build.getDirectory()).thenReturn("target/test-classes");
         when(build.getFinalName()).thenReturn("missing-ear");
         
         exception.expect(EnforcerRuleException.class);
@@ -72,7 +72,7 @@ public class EarModuleClasspathTest {
         when(project.getArtifact()).thenReturn(artifact);
         when(artifact.getType()).thenReturn("ear");
         when(project.getBuild()).thenReturn(build);
-        when(build.getOutputDirectory()).thenReturn("target/test-classes");
+        when(build.getDirectory()).thenReturn("target/test-classes");
         when(build.getFinalName()).thenReturn("test-ear-no-lib");
         
         rule.execute(helper);
@@ -88,7 +88,7 @@ public class EarModuleClasspathTest {
         when(project.getArtifact()).thenReturn(artifact);
         when(artifact.getType()).thenReturn("ear");
         when(project.getBuild()).thenReturn(build);
-        when(build.getOutputDirectory()).thenReturn("target/test-classes");
+        when(build.getDirectory()).thenReturn("target/test-classes");
         when(build.getFinalName()).thenReturn("test-ear-lib-in-classpath");
         
         rule.execute(helper);
@@ -104,7 +104,7 @@ public class EarModuleClasspathTest {
         when(project.getArtifact()).thenReturn(artifact);
         when(artifact.getType()).thenReturn("ear");
         when(project.getBuild()).thenReturn(build);
-        when(build.getOutputDirectory()).thenReturn("target/test-classes");
+        when(build.getDirectory()).thenReturn("target/test-classes");
         when(build.getFinalName()).thenReturn("test-ear-no-lib-in-classpath");
         
         rule.execute(helper);

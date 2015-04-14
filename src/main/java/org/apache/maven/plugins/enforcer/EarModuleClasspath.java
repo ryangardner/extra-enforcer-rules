@@ -47,7 +47,7 @@ public class EarModuleClasspath implements EnforcerRule {
             if (!"ear".equals(projectType)) { 
                 throw new EnforcerRuleException("EarModuleClasspath rule can only be applied in EAR projects"); 
             }
-            File outputDir = new File(project.getBuild().getOutputDirectory());
+            File outputDir = new File(project.getBuild().getDirectory());
             String finalName = project.getBuild().getFinalName();
             File earFile = new File(outputDir, finalName + '.' + projectType);
 
